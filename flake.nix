@@ -7,7 +7,7 @@
   outputs = { self, nixpkgs }:
     let
       pname = "turbo-linux-64";
-      version = "1.6.3";
+      version = "1.7.0";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in
@@ -18,7 +18,7 @@
           version = "v${version}";
           src = pkgs.fetchurl {
             url = "https://registry.npmjs.org/${pname}/-/${pname}-${version}.tgz";
-            sha256 = "sha256-WNJz52h8hu+q+p8QxxVaym/YnUG9NtAFD7lyXdEc2WM=";
+            sha256 = "sha256-CxurKoMmMCJMN9esYCN3HIl38/n0mqWtrmKo9UJSRqQ=";
           };
 
           nativeBuildInputs = [
