@@ -9,22 +9,22 @@
       binaries = {
         "x86_64-linux" = {
           pname = "turbo-linux-64";
-          sha256 = "sha256-Derd/KyLzu8lUaUTLeJp4q2D6fNg6PnaD5r7uzdiHW8=";
+          sha256 = "0zi1348rcpmsf3z7w9hwpsfqx5xkyq5mhji9grmms8lqlzn6iyd9";
         };
         "x86_64-darwin" = {
           pname = "turbo-darwin-64";
-          sha256 = "sha256-srHYWvoi23xhLvd3yWj/GX2scQn67bfPmJJxU0FB/KQ=";
+          sha256 = "1qnqy7j6gg7lxz5wk8lz5px5ffqk1p2bgnf6hszv5npz8ifjvrb8";
         };
         "aarch64-linux" = {
           pname = "turbo-linux-arm64";
-          sha256 = "sha256-AfB77AedF3gipXt6Obu5jdgW6ZCOMJ1E3fdochmSUQ8=";
+          sha256 = "103gbyl3bd47kl5shsax4bj232vbf65a80v80iiiqasvgixc9sgg";
         };
         "aarch64-darwin" = {
           pname = "turbo-darwin-arm64";
-          sha256 = "sha256-JrgmRHsFnatrReUTcL+sgMHHGSyfzQZv7D50SwPKamM=";
+          sha256 = "1qsbp8qh5l4x24knbwmr47cssfz584wx2q0vvq6yapzrqcyv5g0a";
         };
       };
-      version = "1.8.1";
+      version = "1.8.2";
       supportedSystems =
         [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
