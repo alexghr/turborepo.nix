@@ -2,6 +2,7 @@
 
 set -eu -o pipefail
 
+# Inspired by https://discourse.nixos.org/t/update-many-shas/5031/5
 #
 # Use this script to generate an appropriate npm-packages.gen.nix for a
 # specific Turborepo version. It prefetches the archives for each of
