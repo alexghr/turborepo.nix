@@ -40,7 +40,7 @@ I use this in dev shells for my project like this:
 
 ## Update turbo version
 
-This repo aims to track the turbo releases closely. To update the turbo version used run:
+This repo aims to track the turbo releases closely. To update the turbo version used, change the `version` variable in [generate-npm-packages.bash](./generate-npm-packages.bash#L15) and run (requires bash4+):
 
 ```
 $ bash ./generate-npm-packages.bash > npm-packages.gen.nix 
