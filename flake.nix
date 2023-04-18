@@ -36,6 +36,7 @@
             meta = {
               homepage = "https://turbo.build/";
               description = "Binary version of turbo, patched for NixOS";
+              mainProgram = "turbo";
             };
           };
 
