@@ -11,7 +11,13 @@
       npmPackages = import ./npm-packages.gen.nix;
       supportedSystems = builtins.attrNames npmPackages;
     in
-      utils.lib.eachSystem supportedSystems (system:
+      {
+        overlays.turborepo = final: prev: {
+          turborepo = self.packages.${prev.system}.turborepo;
+        };
+        overlays.default = self.overlays.turborepo;
+      }
+      // utils.lib.eachSystem supportedSystems (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (npmPackages.${system}) pname version src;
