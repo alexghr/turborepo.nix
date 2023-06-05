@@ -8,7 +8,7 @@ This repo provides a flake of a patched version of the `turbo` variant. The bina
 
 I use this in dev shells for my project like this:
 
-```
+```nix
 # flake.nix
 {
   description = "Example";
