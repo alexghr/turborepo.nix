@@ -2,7 +2,7 @@
   description = "Patched turbo binary";
 
   # Nixpkgs / NixOS version to use.
-  inputs.nixpkgs.url = "nixpkgs/release-22.11";
+  inputs.nixpkgs.url = "nixpkgs/nixpkgs-unstable";
 
   inputs.utils.url = "github:numtide/flake-utils";
 
