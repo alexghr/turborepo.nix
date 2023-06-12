@@ -24,5 +24,6 @@ jobs:
     - name: Build & cache
       run: |
         nix run github:zhaofengli/attic/$ATTIC_VERSION -- login default ${{ secrets.ATTIC_URL }} ${{ secrets.ATTIC_AUTH_TOKEN }}
+        nix run github:zhaofengli/attic/$ATTIC_VERSION -- use $CACHE_NAME
         nix build
-        nix run github:zhaofengli/attic/$ATTIC_VERSION -- push default ./result
+        nix run github:zhaofengli/attic/$ATTIC_VERSION -- push $CACHE_NAME ./result
