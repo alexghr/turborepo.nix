@@ -9,21 +9,28 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      CACHE_NAME: ${{ github.repository_owner }}
-      ATTIC_VERSION: b1fb790
+      ATTIC_URL: https://attic.alexghr.me
+      ATTIC_AUTH_TOKEN: ${{ secrets.ATTIC_AUTH_TOKEN }}
+      ATTIC_CACHE: public
+      ATTIC_CACHE_PUBLIC_KEY: 5MqPjBBGMCWbo8L8voeQl7HXc5oX+MXZ6BSURfMosIo=
+      # pin attic and nixpkgs
+      ATTIC_FLAKE: github:zhaofengli/attic/b1fb790
+      NIXPKGS_FLAKE: github:NixOS/nixpkgs/0eeebd6
     steps:
     - uses: actions/checkout@v3
     - uses: cachix/install-nix-action@v21
       with:
-        nix_path: nixpkgs=channel:nixos-unstable
-    - uses: cachix/cachix-action@v12
-      with:
-        # attic lives here :)
-        name: ${{ env.CACHE_NAME }}
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        extra_nix_config: |
+          extra-substituters = ${{ env.ATTIC_URL }}/${{ env.ATTIC_CACHE }}
+          extra-trusted-public-keys = ${{ env.ATTIC_CACHE }}:${{ env.ATTIC_CACHE_PUBLIC_KEY }}
+
     - name: Build & cache
       run: |
-        nix run github:zhaofengli/attic/$ATTIC_VERSION -- login default ${{ secrets.ATTIC_URL }} ${{ secrets.ATTIC_AUTH_TOKEN }}
-        nix run github:zhaofengli/attic/$ATTIC_VERSION -- use $CACHE_NAME
+        nix shell $NIXPKGS_FLAKE#bash $ATTIC_FLAKE --command bash <<EOF
+        attic login default ${ATTIC_URL} ${ATTIC_AUTH_TOKEN}
+        attic use ${ATTIC_CACHE}
+
         nix build
-        nix run github:zhaofengli/attic/$ATTIC_VERSION -- push $CACHE_NAME ./result
+
+        attic push $ATTIC_CACHE ./result
+        EOF
