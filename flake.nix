@@ -22,8 +22,8 @@
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (npmPackages.${system}) pname version src;
           inherit (pkgs.lib) optionals;
-        in rec {
-          packages.turborepo = pkgs.stdenv.mkDerivation {
+        in {
+          packages.turborepo = pkgs.stdenvNoCC.mkDerivation {
             inherit pname;
             inherit version;
             src = pkgs.fetchurl src;
@@ -46,7 +46,7 @@
             };
           };
 
-          packages.default = packages.turborepo;
+          packages.default = self.packages.${system}.turborepo;
         }
       );
 }
