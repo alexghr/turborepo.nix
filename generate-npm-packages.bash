@@ -12,7 +12,7 @@ set -eu -o pipefail
 # ./generate-npm-packages.bash > npm-packages.gen.nix
 #
 
-declare version="1.10.10"
+declare version="1.10.11"
 declare -A "hashes"
 declare -A "urls"
 declare -A packages=(
