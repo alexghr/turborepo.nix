@@ -36,7 +36,6 @@
 
             installPhase = ''
               install -m755 -D ${pname}/bin/turbo $out/bin/turbo
-              install -m755 -D ${pname}/bin/go-turbo $out/bin/go-turbo
             '';
 
             meta = {

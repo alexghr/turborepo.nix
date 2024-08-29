@@ -3,34 +3,34 @@
 {
   "aarch64-linux" = {
     pname = "turbo-linux-arm64";
-    version = "v1.10.15";
+    version = "v2.0.14";
     src = {
-      sha256 = "0c0dbv1bgrzw9073pap2664dz3wr5d3qw04d9y5s0gk1cl0iayw4";
-      url = "https://registry.npmjs.org/turbo-linux-arm64/-/turbo-linux-arm64-1.10.15.tgz";
+      sha256 = "142j14hhpmw7lhyv6z7d9211z50wmy7752njhii7n633s56lfn9n";
+      url = "https://registry.npmjs.org/turbo-linux-arm64/-/turbo-linux-arm64-2.0.14.tgz";
     };
   };
   "x86_64-linux" = {
     pname = "turbo-linux-64";
-    version = "v1.10.15";
+    version = "v2.0.14";
     src = {
-      sha256 = "0kqgckgvipcn7110ssmr5ssylpw8b2sib88x0dpar63vq01gmpya";
-      url = "https://registry.npmjs.org/turbo-linux-64/-/turbo-linux-64-1.10.15.tgz";
+      sha256 = "11m3xyw7wvxx45jpj1a6wdv856arymra70ra2gd28ja85kbgjxfh";
+      url = "https://registry.npmjs.org/turbo-linux-64/-/turbo-linux-64-2.0.14.tgz";
     };
   };
   "x86_64-darwin" = {
     pname = "turbo-darwin-64";
-    version = "v1.10.15";
+    version = "v2.0.14";
     src = {
-      sha256 = "19mb40k9icbv28dqrsx96k4idwrfhcm7v29a0rwnibi0wpdh6j0f";
-      url = "https://registry.npmjs.org/turbo-darwin-64/-/turbo-darwin-64-1.10.15.tgz";
+      sha256 = "1fj2rjhzz1jl102nyms3l1pbggx0296k35jak5ffhzs33spkckv3";
+      url = "https://registry.npmjs.org/turbo-darwin-64/-/turbo-darwin-64-2.0.14.tgz";
     };
   };
   "aarch64-darwin" = {
     pname = "turbo-darwin-arm64";
-    version = "v1.10.15";
+    version = "v2.0.14";
     src = {
-      sha256 = "0m2kgpvl20jwhh7hnysdj2rwjjcaaj1pjqhfwf5b10bzzhpsq4yz";
-      url = "https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-1.10.15.tgz";
+      sha256 = "0c4kd8an6h85fhh0phlmlb5kq14ifk58xxx2assq75w8pnm8ggy1";
+      url = "https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-2.0.14.tgz";
     };
   };
 }

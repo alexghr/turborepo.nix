@@ -40,10 +40,10 @@ I use this in dev shells for my project like this:
 
 ## Update turbo version
 
-This repo aims to track the turbo releases closely. To update the turbo version used, change the `version` variable in [generate-npm-packages.bash](./generate-npm-packages.bash#L15) and run (requires bash4+):
+This repo aims to track the turbo releases closely. To update to the latest turbo version, run (requires bash4+):
 
-```
-$ bash ./generate-npm-packages.bash > npm-packages.gen.nix 
+```sh
+$ bash ./generate-npm-packages.bash > npm-packages.gen.nix
 ```
 
 This script will download the binary for each supported system and compute the sha256 hashes necessary and output an appropriate nix file for the flake.
